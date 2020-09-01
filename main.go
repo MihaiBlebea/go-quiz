@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 
 	"github.com/MihaiBlebea/go-quiz/game"
@@ -24,10 +23,8 @@ func main() {
 	player := player.Computer{Answers: []string{"London", "15"}}
 
 	gameService := game.New(*limit, *quiz, &player)
-	result, err := gameService.Run()
+	_, err = gameService.Run()
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println(result)
 }
