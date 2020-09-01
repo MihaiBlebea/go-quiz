@@ -1,0 +1,5 @@
+problems:
+    - question: "What is the capital of UK"
+      answer: "London"
+    - question: "10 + 5"
+      answer: "15"
