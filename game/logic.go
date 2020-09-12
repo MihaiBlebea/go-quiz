@@ -48,11 +48,6 @@ func (s *service) Run() (int, error) {
 			}
 
 			input = strings.TrimSpace(input)
-			if err != nil {
-				answerChan <- Answer{
-					err: err,
-				}
-			}
 
 			answerChan <- Answer{
 				input: input,
