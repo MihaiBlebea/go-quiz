@@ -19,8 +19,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// player := player.Human{}
-	player := player.Computer{Answers: []string{"London", "15"}}
+	player := player.Human{}
+	// player := player.Computer{Answers: []string{"London", "15"}}
 
 	gameService := game.New(*limit, *quiz, &player)
 	_, err = gameService.Run()

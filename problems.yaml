@@ -3,3 +3,5 @@ problems:
       answer: "London"
     - question: "10 + 5"
       answer: "15"
+    - question: "How many wheels does a motorcycle have"
+      answer: "2"

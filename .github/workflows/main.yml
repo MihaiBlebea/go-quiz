@@ -23,3 +23,39 @@ jobs:
 
       - name: Test
         run: go test -v ./...
+
+      - name: Deploy to Heroku
+        uses: AkhileshNS/heroku-deploy@v3.5.6
+        with:
+          # This will be used for authentication. You can find it in your heroku homepage account settings
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          # Email that you use with heroku
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          # The appname to use for deploying/updating
+          heroku_app_name: go-quiz-game
+          # An optional buildpack to use when creating the heroku application
+        #   buildpack: # optional
+          # The branch that you would like to deploy to Heroku
+        #   branch: # optional, default is HEAD
+          # Set this to true if you don't want to use --force when switching branches
+        #   dontuseforce: # optional, default is false
+          # Will deploy using Dockerfile in project root.
+        #   usedocker: # optional, default is false
+          # Type of heroku process (web, worker, etc). This option only makes sense when usedocker enabled
+        #   docker_heroku_process_type: # optional, default is web
+          # A list of args to pass into the Docker build. This option only makes sense when usedocker enabled
+        #   docker_build_args: # optional
+          # Set if your app is located in a subdirectory.
+        #   appdir: # optional, default is 
+          # A URL to which a healthcheck is performed (checks for 200 request)
+        #   healthcheck: # optional, default is 
+          # Value to check for when conducting healthcheck request
+        #   checkstring: # optional, default is 
+          # Time (in seconds) to wait before performing healthcheck
+        #   delay: # optional, default is 0
+          # Contents of the Procfile to save and deploy
+        #   procfile: # optional, default is 
+          # When set to true this will attempt to rollback to the previous release if the healthcheck fails
+        #   rollbackonhealthcheckfailed: # optional, default is false
+          # Path to an localized env file
+        #   env_file: # optional, default is 
