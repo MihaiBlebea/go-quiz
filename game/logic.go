@@ -56,7 +56,7 @@ func (s *service) Run() (int, error) {
 
 		select {
 		case <-t.C:
-			break
+			goto GameOver
 		case answer := <-answerChan:
 			if answer.err != nil {
 				return score, answer.err
@@ -71,6 +71,7 @@ func (s *service) Run() (int, error) {
 		}
 	}
 
+GameOver:
 	s.player.Print(fmt.Sprintf("Game over! Your score is %d from %d", score, len(s.quiz.Problems)))
 
 	return score, nil
